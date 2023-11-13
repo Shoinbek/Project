@@ -2,13 +2,66 @@
 <html>
   <%- include ('../partials/head') %>
 
-  <body>
-    <%- include ('../partials/navbar') %>
+<body>
+  <%- include ('../partials/navbar') %>
 
-    <div class="container">
-      <h1>Patient Details</h1>
-     
-    </div>
-    <%- include ('../partials/scripts') %>
-  </body>
+  <div class="container">
+    <h1>Patient List</h1>
+
+    <a class="my-3 btn btn-primary" href="/patients/create">+ Create</a>
+
+    <table id="patientTable" class="table table-striped table-bordered">
+      <thead>
+        <tr>
+          <th>creatorID</th>
+          <th>creator Name</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>birthDate</th>
+          <th>zipcode</th>
+          <th>state</th>
+          <th>Phone number</th>
+          <th>creat date</th>
+          <th>insuranceType</th>
+          <th>testType</th>
+          <th>DoctorService</th>
+          <th>labName</th>
+          <th>sampleStatus</th>
+        </tr>
+      </thead>
+      <% for (let i = 0; i < patientData.length; i++) { %>
+      <tr>
+        <td><%= patientData[i].creatorID %></td>
+        <td><%=patientData[i].creatorName %></td>
+        <td><%= patientData[i].firstName %></td>
+        <td><%=patientData[i].lastName %></td>
+        <td><%=patientData[i].birthDate %></td>
+        <td><%=patientData[i].zipcode %></td>
+        <td><%=patientData[i].state %></td>
+        <td><%=patientData[i].phoneNumber %></td>
+        <td><%=patientData[i].createDate %></td>
+        <td><%=patientData[i].insuranceType %></td>
+        <td><%=patientData[i].testType %></td>
+        <td><%=patientData[i].DoctorService %></td>
+        <td><%=patientData[i].labName %></td>
+        <td><%=patientData[i].sampleStatus %></td>
+        <td>
+          <a href="/patients/update?_id=<%=patientData[i]._id%>">Edit</a> |
+          <a href="/patients/delete?_id=<%=patientData[i]._id%>" onclick="return confirm('Are you sure you want to delete this?')">Delete</a>
+        </td>
+      </tr>
+      <% } %>
+    </table>
+  </div>
+  <%- include ('../partials/scripts') %>
+
+  <script>
+    $(document).ready(function() {
+      $('#patientTable').DataTable({
+        responsive: true
+      });
+    });
+  </script>
+</body>
+
 </html>
