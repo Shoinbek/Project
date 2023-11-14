@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <%- include ('../partials/head') %>
+
+<body>
+  <%- include ('../partials/navbar') %>
+
+  <div class="container">
+    <h1 class="text-center">Update patient</h1>
+
+    <form method="post" action="/patients/update" class="container mt-5">
+        <div class="row justify-content-center">
+          <div class="col-md-4">
+            <div class="form-group mb-2">
+              <input type="text" class="form-control" name="creatorID" placeholder="creatorID" />
+            </div>
+            <div class="form-group mb-2">
+              <input type="text" class="form-control" name="creatorName" placeholder="Creator Name" />
+            </div>
+            <div class="form-group mb-2">
+              <input type="text" class="form-control" name="firstName" placeholder="First Name" />
+            </div>
+            <div class="form-group mb-2">
+              <input type="text" class="form-control" name="lastName" placeholder="Last Name" />
+            </div>
+            <div class="form-group mb-2">
+              <input type="date" class="form-control" name="birthDate" placeholder="Birth date" />
+            </div>
+            <div class="form-group mb-2">
+              <input type="text" class="form-control" name="zipcode" placeholder="zipcode" />
+            </div>
+            <div class="form-group mb-2">
+              <input type="text" class="form-control" name="state" placeholder="state" />
+            </div>
+            <div class="form-group mb-2">
+              <input type="text" class="form-control" name="phoneNumber" placeholder="phone number" />
+            </div>
+            <div class="form-group mb-2">
+              <input type="date" class="form-control" name="createDate" placeholder="createDate" />
+            </div>
+            <div class="form-group mb-2">
+              <input type="text" class="form-control" name="insuranceType" placeholder="insuranceType" />
+            </div>
+            <div class="form-group mb-2">
+              <input type="text" class="form-control" name="testType" placeholder="test type" />
+            </div>
+            <div class="form-group mb-2">
+              <input type="text" class="form-control" name="DoctorService" placeholder="doctor service" />
+            </div>
+            <div class="form-group mb-2">
+              <input type="text" class="form-control" name="labName" placeholder="Lab Name" />
+            </div>
+            <div class="form-group mb-2">
+              <input type="text" class="form-control" name="sampleStatus" placeholder="sample status" />
+            </div>
+            <div class="form-group">
+              <input type="submit" class="btn btn-primary" value="Add Patient" />
+            </div>
+          </div>
+        </div>
+      </form>
+      
+
+  </div>
+  <%- include ('../partials/scripts') %>
+
+</body>
+
+</html>

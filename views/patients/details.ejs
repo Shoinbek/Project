@@ -29,11 +29,12 @@
           <th>sampleStatus</th>
         </tr>
       </thead>
+      
       <% for (let i = 0; i < patientData.length; i++) { %>
       <tr>
-        <td><%= patientData[i].creatorID %></td>
+        <td><%=patientData[i].creatorID %></td>
         <td><%=patientData[i].creatorName %></td>
-        <td><%= patientData[i].firstName %></td>
+        <td><%=patientData[i].firstName %></td>
         <td><%=patientData[i].lastName %></td>
         <td><%=patientData[i].birthDate %></td>
         <td><%=patientData[i].zipcode %></td>

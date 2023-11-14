@@ -37,7 +37,7 @@ const patientSchema = new mongoose.Schema(
       },
       createDate: {
         type: Date,
-        required: true,
+        default: Date.now,
       },
       insuranceType: {
         type: String,
